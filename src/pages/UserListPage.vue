@@ -4,7 +4,7 @@
       class="flex flex-row items-center border-b h-[40px] border-gray-300 bg-white pr-3"
     >
       <div class="flex-1 text-sm leading-[30px] pl-4 truncate">
-        <span>{{ this.$t('user.list') }}</span>
+        <span>{{ $t('user.list') }}</span>
       </div>
     </div>
 
@@ -14,15 +14,10 @@
           <n-form label-placement="left" label-width="90">
             <n-grid cols="1 s:1 m:2 l:3 xl:3 2xl:4" responsive="screen">
               <n-gi>
-                <n-form-item
-                  :label="this.$t('user.username')"
-                  path="param.username"
-                >
+                <n-form-item :label="$t('user.username')" path="param.username">
                   <n-input
                     v-model:value="param.username"
-                    :placeholder="
-                      this.$t('common.preInput') + this.$t('user.username')
-                    "
+                    :placeholder="$t('common.preInput') + $t('user.username')"
                     clearable
                     @keydown.enter.prevent
                     @keyup.enter="queryList"
@@ -32,10 +27,10 @@
               <n-gi suffix class="suffix">
                 <n-space justify="end" class="ml-2">
                   <n-button tertiary @click="queryList">{{
-                    this.$t('common.query')
+                    $t('common.query')
                   }}</n-button>
                   <n-button type="info" @click="showCreate">{{
-                    this.$t('common.add')
+                    $t('common.add')
                   }}</n-button>
                 </n-space>
               </n-gi>
@@ -72,10 +67,10 @@
         <template #footer>
           <n-space align="baseline">
             <n-button text @click="closeForm">{{
-              this.$t('common.return')
+              $t('common.return')
             }}</n-button>
             <n-button type="primary" @click="submitForm">{{
-              this.$t('common.confirm')
+              $t('common.confirm')
             }}</n-button>
           </n-space>
         </template>

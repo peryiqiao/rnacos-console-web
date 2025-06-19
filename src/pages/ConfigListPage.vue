@@ -4,7 +4,7 @@
       class="flex flex-row items-center h-10 border-b border-gray-300 bg-white pr-3"
     >
       <div class="flex-1 text-sm leading-[30px] pl-4">
-        <span>{{ this.$t('config.config_list') }}</span>
+        <span>{{ $t('config.config_list') }}</span>
       </div>
       <div class="flex-none">
         <NamespacePopSelect @change="queryList" />
@@ -18,12 +18,12 @@
             <n-grid cols="1 s:1 m:2 l:3 xl:3 2xl:4" responsive="screen">
               <n-gi>
                 <n-form-item
-                  :label="this.$t('config.config_id')"
+                  :label="$t('config.config_id')"
                   path="param.dataParam"
                 >
                   <n-input
                     v-model:value="param.dataParam"
-                    :placeholder="this.$t('config.input_dataId')"
+                    :placeholder="$t('config.input_dataId')"
                     clearable
                     @keydown.enter.prevent
                     @keyup.enter="queryList"
@@ -32,12 +32,12 @@
               </n-gi>
               <n-gi>
                 <n-form-item
-                  :label="this.$t('config.config_group')"
+                  :label="$t('config.config_group')"
                   path="param.groupParam"
                 >
                   <n-input
                     v-model:value="param.groupParam"
-                    :placeholder="this.$t('config.input_config_group')"
+                    :placeholder="$t('config.input_config_group')"
                     clearable
                     @keydown.enter.prevent
                     @keyup.enter="queryList"
@@ -47,17 +47,17 @@
               <n-gi>
                 <n-space justify="end" class="ml-2">
                   <n-button tertiary @click="queryList">{{
-                    this.$t('common.query')
+                    $t('common.query')
                   }}</n-button>
                   <n-button
                     v-if="webResources.canUpdateConfig"
                     type="info"
                     @click="showCreate"
-                    >{{ this.$t('common.add') }}</n-button
+                    >{{ $t('common.add') }}</n-button
                   >
 
                   <n-button @click="download" type="info">{{
-                    this.$t('config.export_config')
+                    $t('config.export_config')
                   }}</n-button>
 
                   <n-upload
@@ -69,7 +69,7 @@
                     @finish="handlerUploadFinish"
                   >
                     <n-button type="info">{{
-                      this.$t('config.import_config')
+                      $t('config.import_config')
                     }}</n-button>
                   </n-upload>
                 </n-space>
@@ -126,8 +126,8 @@
     >
       <SubContentFullPage
         v-if="useDiffForm"
-        :title="this.$t('config.diff_content')"
-        :submitName="this.$t('config.confirm_change')"
+        :title="$t('config.diff_content')"
+        :submitName="$t('config.confirm_change')"
         @close="closeDiffForm"
         @submit="submitData"
       >

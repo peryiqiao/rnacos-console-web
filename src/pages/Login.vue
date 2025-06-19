@@ -4,7 +4,7 @@
       <div
         class="h-[52px] leading-[52px] text-center rounded-t-lg bg-blue-600 text-white"
       >
-        <span>R-NACOS {{ this.$t('login.login') }}</span>
+        <span>R-NACOS {{ $t('login.login') }}</span>
       </div>
       <n-form
         class="border border-gray-300 p-5 pb-6 bg-white rounded-b-lg shadow-lg"
@@ -12,16 +12,16 @@
         :model="model"
         :rules="rules"
       >
-        <n-form-item path="username" :label="this.$t('user.username')">
+        <n-form-item path="username" :label="$t('user.username')">
           <n-input
-            :placeholder="this.$t('user.username')"
+            :placeholder="$t('user.username')"
             v-model:value="model.username"
             @keydown.enter.prevent
           />
         </n-form-item>
-        <n-form-item path="password" :label="this.$t('login.password')">
+        <n-form-item path="password" :label="$t('login.password')">
           <n-input
-            :placeholder="this.$t('login.password')"
+            :placeholder="$t('login.password')"
             type="password"
             v-model:value="model.password"
             @keydown.enter="captcha_visible ? $event.preventDefault() : null"
@@ -30,9 +30,9 @@
         </n-form-item>
         <div v-if="captcha_visible" class="w-full inline-flex flex-row">
           <div class="flex-1">
-            <n-form-item path="captcha" :label="this.$t('login.captcha')">
+            <n-form-item path="captcha" :label="$t('login.captcha')">
               <n-input
-                :placeholder="this.$t('login.captcha')"
+                :placeholder="$t('login.captcha')"
                 type="captcha"
                 v-model:value="model.captcha"
                 @keydown.enter.prevent
@@ -54,7 +54,7 @@
             class="h-[34px] w-full text-sm leading-[14px] bg-blue-600 text-white border-0 rounded cursor-pointer hover:bg-blue-700 transition-colors duration-200"
             @click="submit"
           >
-            {{ this.$t('login.login') }}
+            {{ $t('login.login') }}
           </button>
         </div>
       </n-form>

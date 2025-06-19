@@ -22,7 +22,7 @@
       <div
         class="bg-white text-sm px-2 text-gray-700 sm:h-[30px] flex items-center"
       >
-        {{ this.$t('namespace.namespace') }}:
+        {{ $t('namespace.namespace') }}:
       </div>
       <div class="w-[260px]">
         <n-select

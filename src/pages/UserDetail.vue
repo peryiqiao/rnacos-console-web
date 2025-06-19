@@ -1,18 +1,18 @@
 <template>
   <div class="detailWrap">
     <n-form ref="formRef" :model="model" :rules="rules">
-      <n-form-item path="username" :label="this.$t('user.username')">
+      <n-form-item path="username" :label="$t('user.username')">
         <n-input
           :disabled="isKeyReadonly"
-          :placeholder="this.$t('common.preInput') + this.$t('user.username')"
+          :placeholder="$t('common.preInput') + $t('user.username')"
           v-model:value="model.username"
           @keydown.enter.prevent
         />
       </n-form-item>
-      <n-form-item path="nickname" :label="this.$t('user.nickname')">
+      <n-form-item path="nickname" :label="$t('user.nickname')">
         <n-input
           :disabled="isReadonly"
-          :placeholder="this.$t('common.preInput') + this.$t('user.nickname')"
+          :placeholder="$t('common.preInput') + $t('user.nickname')"
           v-model:value="model.nickname"
           @keydown.enter.prevent
         />
@@ -20,11 +20,11 @@
       <n-form-item
         v-if="!isKeyReadonly"
         path="password"
-        :label="this.$t('user.password')"
+        :label="$t('user.password')"
       >
         <n-input
           type="password"
-          :placeholder="this.$t('common.preInput') + this.$t('user.password')"
+          :placeholder="$t('common.preInput') + $t('user.password')"
           v-model:value="model.password"
           @keydown.enter.prevent
         />
@@ -32,17 +32,17 @@
       <n-form-item
         v-if="isKeyReadonly"
         path="updatePassword"
-        :label="this.$t('user.resetPassword')"
+        :label="$t('user.resetPassword')"
       >
         <n-input
           type="password"
           :disabled="isReadonly"
-          :placeholder="this.$t('common.preInput') + this.$t('user.password')"
+          :placeholder="$t('common.preInput') + $t('user.password')"
           v-model:value="model.password"
           @keydown.enter.prevent
         />
       </n-form-item>
-      <n-form-item path="roles" :label="this.$t('user.roles')">
+      <n-form-item path="roles" :label="$t('user.roles')">
         <n-select
           v-model:value="model.roles"
           :disabled="isReadonly"
@@ -50,15 +50,13 @@
           :options="model.roleOptions"
         />
       </n-form-item>
-      <n-form-item path="enabled" :label="this.$t('user.enable')">
+      <n-form-item path="enabled" :label="$t('user.enable')">
         <n-switch :disabled="isReadonly" v-model:value="model.enable" />
       </n-form-item>
       <n-form-item
         path="namespaceWhitelist"
         :label="
-          this.$t('menu.namespace') +
-          this.$t('common.join') +
-          this.$t('common.whitelist')
+          $t('menu.namespace') + $t('common.join') + $t('common.whitelist')
         "
       >
         <div class="privilege-group">
@@ -68,10 +66,10 @@
               v-model:value="model.namespacePrivilege.whitelistIsAll"
             >
               <template #checked>
-                {{ this.$t('common.all') }}
+                {{ $t('common.all') }}
               </template>
               <template #unchecked>
-                {{ this.$t('common.part') }}
+                {{ $t('common.part') }}
               </template>
             </n-switch>
           </div>
@@ -88,9 +86,7 @@
       <n-form-item
         path="namespaceBlacklist"
         :label="
-          this.$t('menu.namespace') +
-          this.$t('common.join') +
-          this.$t('common.blacklist')
+          $t('menu.namespace') + $t('common.join') + $t('common.blacklist')
         "
       >
         <div class="privilege-group">

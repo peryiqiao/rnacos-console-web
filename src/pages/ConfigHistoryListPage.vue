@@ -4,10 +4,10 @@
       class="flex flex-row items-center border-b h-[40px] border-gray-300 bg-white pr-3"
     >
       <div class="flex-1 text-sm leading-[30px] pl-4 truncate">
-        <span>{{ this.$t('config.config_history') }}</span>
+        <span>{{ $t('config.config_history') }}</span>
       </div>
       <div class="flex-none">
-        <n-button @click="routerBack">{{ this.$t('common.back') }}</n-button>
+        <n-button @click="routerBack">{{ $t('common.back') }}</n-button>
       </div>
     </div>
 
@@ -17,7 +17,7 @@
           <n-form label-placement="left" label-width="auto" class="flex-1">
             <div class="flex gap-2 flex-wrap">
               <n-form-item
-                :label="this.$t('config.dataId')"
+                :label="$t('config.dataId')"
                 path="param.dataId"
                 class="flex-1 min-w-[200px]"
               >
@@ -28,7 +28,7 @@
                 />
               </n-form-item>
               <n-form-item
-                :label="this.$t('config.config_group')"
+                :label="$t('config.config_group')"
                 path="param.group"
                 class="flex-1 min-w-[200px]"
               >
@@ -42,7 +42,7 @@
           </n-form>
           <div class="flex items-center ml-2.5">
             <n-button tertiary @click="queryList">{{
-              this.$t('common.refresh')
+              $t('common.refresh')
             }}</n-button>
           </div>
         </div>
@@ -76,7 +76,7 @@
         <template #footer>
           <n-space align="baseline">
             <n-button text @click="closeForm">{{
-              this.$t('common.return')
+              $t('common.return')
             }}</n-button>
             <n-button
               v-if="webResources.canUpdateConfig"
@@ -97,8 +97,8 @@
     >
       <SubContentFullPage
         v-if="useDiffForm"
-        :title="this.$t('config.diff_content')"
-        :submitName="this.$t('config.confirm_change')"
+        :title="$t('config.diff_content')"
+        :submitName="$t('config.confirm_change')"
         @close="closeDiffForm"
         @submit="submitDiffForm"
       >

@@ -4,10 +4,10 @@
       class="flex flex-row items-center border-b h-[40px] border-gray-300 bg-white pr-3"
     >
       <div class="flex-1 text-sm leading-[30px] pl-4 truncate">
-        <span>{{ this.$t('config.config_history') }}</span>
+        <span>{{ $t('config.config_history') }}</span>
       </div>
       <div class="flex-none">
-        <n-button @click="routerBack">{{ this.$t('common.back') }}</n-button>
+        <n-button @click="routerBack">{{ $t('common.back') }}</n-button>
       </div>
     </div>
 
@@ -17,13 +17,13 @@
           <n-form label-placement="left" label-width="auto">
             <div class="flex flex-row gap-2 flex-wrap">
               <n-form-item
-                :label="this.$t('service.name')"
+                :label="$t('service.name')"
                 path="param.serviceParam"
               >
                 <n-input :disabled="true" v-model:value="param.serviceName" />
               </n-form-item>
               <n-form-item
-                :label="this.$t('service.groupName')"
+                :label="$t('service.groupName')"
                 path="param.groupParam"
               >
                 <n-input :disabled="true" v-model:value="param.groupName" />
@@ -33,7 +33,7 @@
           <div class="flex items-center">
             <span class="ml-2.5">
               <n-button tertiary @click="reloadData">{{
-                this.$t('common.refresh')
+                $t('common.refresh')
               }}</n-button>
             </span>
           </div>
@@ -64,10 +64,10 @@
         <template #footer>
           <n-space align="baseline">
             <n-button text @click="closeForm">{{
-              this.$t('common.return')
+              $t('common.return')
             }}</n-button>
             <n-button type="primary" @click="submitForm">{{
-              this.$t('common.confirm')
+              $t('common.confirm')
             }}</n-button>
           </n-space>
         </template>

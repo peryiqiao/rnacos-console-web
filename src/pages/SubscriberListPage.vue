@@ -5,7 +5,7 @@
       :class="{ 'h-[40px]': !isMobile }"
     >
       <div class="flex-1 text-sm pl-4">
-        <span>{{ this.$t('config.config_list') }}</span>
+        <span>{{ $t('config.config_list') }}</span>
       </div>
       <div class="flex-none">
         <NamespacePopSelect @change="queryList" />
@@ -19,12 +19,12 @@
             <n-grid cols="1 s:1 m:2 l:3 xl:3 2xl:4" responsive="screen">
               <n-gi>
                 <n-form-item
-                  :label="this.$t('service.name')"
+                  :label="$t('service.name')"
                   path="param.serviceParam"
                 >
                   <n-input
                     v-model:value="param.serviceParam"
-                    :placeholder="this.$t('service.inputName')"
+                    :placeholder="$t('service.inputName')"
                     clearable
                     @keydown.enter.prevent
                     @keyup.enter="queryList"
@@ -33,12 +33,12 @@
               </n-gi>
               <n-gi>
                 <n-form-item
-                  :label="this.$t('service.groupName')"
+                  :label="$t('service.groupName')"
                   path="param.groupParam"
                 >
                   <n-input
                     v-model:value="param.groupParam"
-                    :placeholder="this.$t('service.inputGroupName')"
+                    :placeholder="$t('service.inputGroupName')"
                     clearable
                     @keydown.enter.prevent
                     @keyup.enter="queryList"
@@ -48,7 +48,7 @@
               <n-gi>
                 <n-space justify="end" class="ml-2">
                   <n-button tertiary @click="queryList">{{
-                    this.$t('common.query')
+                    $t('common.query')
                   }}</n-button>
                 </n-space>
               </n-gi>
